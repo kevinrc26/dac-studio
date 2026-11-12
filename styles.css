@@ -1,0 +1,447 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --negro: #000;
+    --blanco: #fff;
+    --hormigon: #e6e6e3;
+    --acero: #8a8a86;
+    --fuente: 'Jost', system-ui, sans-serif;
+    --corte: 50%;
+}
+
+body {
+    font-family: var(--fuente);
+    font-weight: 300;
+    color: var(--negro);
+    background-color: var(--blanco);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.marca {
+    font-weight: 200;
+    letter-spacing: .32rem;
+    font-size: 1.4rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    padding: 0 2rem;
+}
+
+.nav ul {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+}
+
+.hero {
+    background-color: var(--negro);
+    color: var(--blanco);
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 6rem 2rem 3rem;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 200;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero h1 span:last-child {
+    font-weight: 400;
+}
+
+.hero p {
+    margin-top: 1.4rem;
+    max-width: 28rem;
+    color: #d3d3cf;
+}
+
+.acciones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.4rem;
+}
+
+.btn {
+    display: inline-flex;
+    padding: .9rem 1.7rem;
+    border: 1px solid currentColor;
+    font-weight: 400;
+    letter-spacing: .06em;
+    transition: background .2s, color .2s;
+}
+
+.btn:hover {
+    background: var(--blanco);
+    color: var(--negro);
+}
+
+.evolucion {
+    margin-top: 3rem;
+    font-size: .9rem;
+    color: var(--acero);
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    color: var(--blanco);
+    mix-blend-mode: difference;
+}
+
+.servicios {
+    padding: 6rem 2rem;
+}
+
+.cabecera {
+    margin-bottom: 3rem;
+    max-width: 40rem;
+}
+
+.plano {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 3px solid var(--negro);
+    border-left: 3px solid var(--negro);
+}
+
+.habitacion {
+    padding: 2rem 1.6rem;
+    min-height: 260px;
+    border-right: 3px solid var(--negro);
+    border-bottom: 3px solid var(--negro);
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    transition: background .25s, color .25s;
+}
+
+.area {
+    font-size: .72rem;
+    letter-spacing: .2rem;
+    color: var(--acero);
+}
+
+.habitacion p {
+    font-size: .95rem;
+    margin-top: auto;
+}
+
+.habitacion:hover {
+    background: var(--negro);
+    color: var(--blanco);
+}
+
+.proceso {
+    background: var(--negro);
+    color: var(--blanco);
+    padding: 6rem 2rem;
+}
+
+.proceso .intro {
+    color: #d3d3cf;
+    max-width: 34rem;
+    margin: .8rem 0 3.5rem;
+}
+
+.nivel {
+    display: grid;
+    grid-template-columns: 110px 1fr 1fr;
+    gap: 2rem;
+    align-items: baseline;
+    padding: 1.6rem 0;
+    border-top: 1px solid rgba(255, 255, 255, .16);
+}
+
+.nivel:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, .16);
+}
+
+.cota {
+    font-size: 2.6rem;
+    font-weight: 200;
+    color: var(--acero);
+}
+
+.nivel h3 {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.obras {
+    padding: 6rem 2rem;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 200px;
+    gap: .8rem;
+}
+
+.obra {
+    position: relative;
+    background: var(--hormigon);
+    overflow: hidden;
+}
+
+.obra:nth-child(1) {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.obra:nth-child(n+2) {
+    grid-column: span 2;
+}
+
+.foto {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: var(--acero);
+    font-size: .8rem;
+    letter-spacing: .15rem;
+    position: absolute;
+    inset: 0;
+}
+
+.obra figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem 1.1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    color: var(--blanco);
+    transform: translateY(100%);
+    transition: transform .3s;
+}
+
+.obra:hover figcaption {
+    transform: none;
+}
+
+.obra figcaption span {
+    display: block;
+    font-size: .8rem;
+    color: #cdcfcb;
+}
+
+.contacto {
+    background: var(--hormigon);
+    padding: 6rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contacto .intro {
+    margin: 1rem 0 2rem;
+    color: #444;
+}
+
+.dato {
+    font-size: 1.05rem;
+    margin-bottom: .6rem;
+}
+
+.formulario {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.campo {
+    display: grid;
+    gap: .4rem;
+}
+
+.campo label {
+    font-size: .9rem;
+    color: #444;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: .85rem 1rem;
+    background: var(--blanco);
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.campo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.formulario .btn {
+    justify-self: start;
+    background: transparent;
+    cursor: pointer;
+}
+
+.nota {
+    font-size: .85rem;
+    color: var(--acero);
+}
+
+.footer {
+    background: var(--negro);
+    color: var(--acero);
+    padding: 3rem 2rem 2rem;
+    font-size: .85rem;
+    overflow: hidden;
+}
+
+.gigante {
+    font-size: 15rem;
+    font-weight: 200;
+    letter-spacing: .2em;
+    line-height: .9;
+    color: #2a2a28;
+    margin-bottom: 1.5rem;
+}
+
+.footer>div:last-child {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, .16);
+    padding-top: 1.2rem;
+}
+
+.lema {
+    color: var(--blanco);
+    letter-spacing: .18rem;
+}
+
+.comparador {
+    position: relative;
+    aspect-ratio: 1/1;
+    max-width: 560px;
+    width: 100%;
+    justify-self: end;
+    user-select: none;
+}
+
+.comparador svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.plano-linea {
+    fill: none;
+    stroke: #7d7d78;
+    stroke-width: 1.2;
+    stroke-dasharray: 4 3;
+}
+
+.plano-cota {
+    fill: none;
+    stroke: #5c5c58;
+    stroke-width: .8;
+}
+
+.obra-muro {
+    fill: #3b3b38;
+}
+
+.obra-muro-claro {
+    fill: #5a5a56;
+}
+
+.obra-vidrio {
+    fill: #0f0f0e;
+    stroke: #8a8a86;
+    stroke-width: .6;
+}
+
+.obra-luz {
+    fill: #f2f2ee;
+}
+
+.capa-obra {
+    clip-path: inset(0 0 0 var(--corte));
+}
+
+.divisor {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--corte);
+    width: 1px;
+    background: var(--blanco);
+    pointer-events: none;
+}
+
+.divisor::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--blanco);
+    border-radius: 50%;
+    background: var(--negro);
+    transform: translate(-50%, -50%);
+}
+
+.etiqueta {
+    position: absolute;
+    bottom: .6rem;
+    font-size: .75rem;
+    letter-spacing: .2em;
+    color: var(--acero);
+}
+
+.etiqueta.izq {
+    left: 0;
+}
+
+.etiqueta.der {
+    right: 0;
+}
+
+.comparador input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: ew-resize;
+    margin: 0;
+}
